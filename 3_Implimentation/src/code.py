@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 from openpyxl import load_workbook
@@ -6,8 +5,8 @@ from openpyxl import load_workbook
 import sys
 import matplotlib.pyplot as plt
 
-# taken an data frame for accessing output
-df2=pd.DataFrame()
+# data frame for accessing output
+df2 = pd.DataFrame()
 
 for a in range(int(input(" Enter the no of inputs you required:"))):
     # for n number
@@ -20,7 +19,8 @@ for a in range(int(input(" Enter the no of inputs you required:"))):
 
     third = input("Enter the email:")
     # third input
-    class1= pd.read_excel('final sheet211.xlsx', sheet_name=['Sheet1', 'Sheet2', 'Sheet3', 'Sheet4', 'Sheet5'])
+    class1 = pd.read_excel('final sheet211.xlsx', sheet_name=['Sheet1',
+                           'Sheet2', 'Sheet3', 'Sheet4', 'Sheet5'])
     # reading all sheets in excel and reading it to a variable
 
     g = class1['Sheet1']
@@ -58,13 +58,14 @@ for a in range(int(input(" Enter the no of inputs you required:"))):
             # iteration of data in columns and sending to data frame
 
             df[j] = g[j]
-            #  check the input data entries is 1 or more and append data in to data frame
+            # check input data is 1 or not and append data in data frame
 
-            if a== 0:
-                df2[j]=g[j]
-                # if data entries are more than 1 concatenation of data frames in to an final master sheet
+            if a == 0:
+                df2[j] = g[j]
+                # if data entries is > 1
+                # concatenation of data in to final master sheet
 
-    if a!=0:
+    if a != 0:
         df2 = pd.concat([df, df2])
         print(df2)
         # iterates through all sheets
